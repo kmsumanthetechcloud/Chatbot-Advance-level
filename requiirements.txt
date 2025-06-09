@@ -5,3 +5,6 @@ langchain
 langchain-openai
 langchain-ollama
 python-dotenv
+gunicorn
+# gunicorn app:app
+
