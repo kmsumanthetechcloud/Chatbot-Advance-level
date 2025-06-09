@@ -1,0 +1,5 @@
+{% if result %}
+  <div class="message bot-msg">{{ result }}</div>
+{% elif error %}
+  <div class="message bot-msg error-msg">{{ error }}</div>
+{% endif %}

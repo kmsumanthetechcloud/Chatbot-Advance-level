@@ -1,0 +1,7 @@
+Flask
+requests
+beautifulsoup4
+langchain
+langchain-openai
+langchain-ollama
+python-dotenv

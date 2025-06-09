@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DollarStore Chatbot</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+    }
+
+    #chatbot-icon {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 24px;
+      z-index: 1000;
+    }
+
+    .chatbot-widget {
+      display: none;
+      flex-direction: column;
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      width: 350px;
+      max-height: 500px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      z-index: 999;
+    }
+
+    .chat-header {
+      background: #4CAF50;
+      color: white;
+      padding: 15px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .chat-body {
+      padding: 10px;
+      flex: 1;
+      overflow-y: auto;
+      background: #fafafa;
+    }
+
+    .message {
+      padding: 8px 12px;
+      margin: 8px 0;
+      border-radius: 8px;
+      max-width: 80%;
+      word-wrap: break-word;
+    }
+
+    .user-msg {
+      background: #e0f7fa;
+      align-self: flex-end;
+    }
+
+    .bot-msg {
+      background: #eeeeee;
+      align-self: flex-start;
+    }
+
+    .error-msg {
+      color: red;
+    }
+
+    .chat-footer {
+      display: flex;
+      padding: 10px;
+      border-top: 1px solid #ccc;
+    }
+
+    .chat-footer input[type="text"] {
+      flex: 1;
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    .chat-footer button {
+      padding: 10px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .close-btn {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Chat Icon -->
+<div id="chatbot-icon">💬</div>
+
+<!-- Chat Widget -->
+<div class="chatbot-widget" id="chatbot-box">
+  <div class="chat-header">
+    DollarStore Assistant
+    <span class="close-btn" onclick="toggleChat()">×</span>
+  </div>
+
+  <div class="chat-body" id="chat-body">
+    <div class="message bot-msg"></strong>“Hello! How can I assist you today?”
+</div>
+  </div>
+
+  <div class="chat-footer">
+    <form id="chat-form">
+      <input type="text" id="user-query" name="query" placeholder="Ask a question..." required>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
